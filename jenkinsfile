@@ -1,0 +1,13 @@
+node(){
+
+state("S3 List"){
+
+sh 
+"""
+    aws s3 ls;
+
+"""
+
+}
+
+}
