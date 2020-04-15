@@ -2,8 +2,7 @@ node(){
 
 stage("S3 List"){
 
-sh 
-"""
+sh  """
     aws s3 ls;
 
 """
