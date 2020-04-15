@@ -1,6 +1,6 @@
 node(){
 
-state("S3 List"){
+stage("S3 List"){
 
 sh 
 """
