@@ -13,6 +13,10 @@ sh '''
 
 instance_json="\$(aws ec2 describe-instances --region us-east-1 --filter  Name=private-ip-address,Values=$TEEIPAddress)"
 
+Instnce_Id="\$(echo \$instance_json | jq -r '.Reservations[0].Instances[0].InstanceID');
+
+aws ec2 describe-tags --region us-east1 --instance-ids $Instnce_Id
+
 '''
 
 }
