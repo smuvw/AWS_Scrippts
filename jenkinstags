@@ -11,7 +11,7 @@ node() {
 
 sh '''
 
-instance_json="\$(aws ec2 describe-instances  --filter  Name=private-ip-address,Values=$TEEIPAddress)"
+instance_json="\$(aws ec2 describe-instances --region "us-east-1" --filter  Name=private-ip-address,Values=$TEEIPAddress)"
 
 '''
 
