@@ -1,7 +1,7 @@
 properties([
  parameters([
   
-     string(name: 'TEEIPAddress', defaultValue: "", description: 'Specify the TEEIPAddress for Persist')
+     string(name: 'TEEIPAddress', defaultValue: "", description: 'Specify the TEEIPAddress for Persist'),
      choice(name: 'TagValue', choices: ["false","true"].join("\n"), description: 'Selelct Tag Value')
  
  ])
