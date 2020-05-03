@@ -9,8 +9,11 @@ properties([
 
 node() {
 
+sh '''
 
 instance_json="\$(aws ec2 describe-instances --region "us-east2" --filter  Name=private-ip-address,Values=$TEEIPAddress)"
+
+'''
 
 }
 
