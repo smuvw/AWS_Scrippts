@@ -1,0 +1,24 @@
+#!/usr/bin/env groovy
+
+properties([
+
+parameters([
+
+ string(name: 'TEEIPAddress', defaultValue: "", description: 'Specify the TEEIPAddress for Persist'),
+ choice(name: 'TagValue', choicese: ["false","true"].join("\n"), description: 'Selelct Tag Value')
+
+])
+
+
+])
+
+node() {
+
+instance_json="\$(aws ec2 describe-instances --region "us-east1" --filter Name=tag:Palatform,Values=TPA Nmae=private-ip-address,Values=$TEEIPAddress)"
+
+Instnce_Id="\$(echo \$instance_json | jq -r '.Reservations[0].Instances[0].InstanceID');
+
+aws ec2 describe-tags --region "us-east1" 00instance-ids $Instnce_Id
+
+
+}
