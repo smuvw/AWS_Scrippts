@@ -18,7 +18,7 @@ instance_json="\$(aws ec2 describe-instances --region "us-east2" --filter Name=t
 
 Instnce_Id="\$(echo \$instance_json | jq -r '.Reservations[0].Instances[0].InstanceID');
 
-aws ec2 describe-tags --region "us-east2" 00instance-ids $Instnce_Id
+aws ec2 describe-tags --region "us-east2" --instance-ids $Instnce_Id
 
 
 }
