@@ -19,7 +19,7 @@ echo \$Instnce_Id
 
 # aws ec2 describe-tags --region us-east-1 --filters "Name=resource-id,Values=$Instnce_Id"
 
-aws ec2 create-tags --region us-east-1 --resources $Instnce_Id --tags Key=Auto-off,Values=$TagValue
+aws ec2 create-tags --region us-east-1 --resources $Instnce_Id --tags Key=Auto-off,Value=$TagValue
 
 '''
 
